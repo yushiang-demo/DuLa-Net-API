@@ -25,9 +25,9 @@ class DB():
             '_id': object_id,
             'status': TASK_STATUS.PROCESSING,
             'images': {
-                'origin': f'{path}/{object_id}/image.jpg',
+                'origin': f'{path}/{object_id}/raw.jpg',
                 'preview': f'{path}/{object_id}/vis.jpg',
-                'aligned': f'{path}/{object_id}/raw.jpg',
+                'aligned': f'{path}/{object_id}/image.jpg',
             },
             'layout':{
                 'data': None
