@@ -1,7 +1,6 @@
 from flask import send_file
 from flask_restx import Resource
 
-from api.constant import STATIC_FOLDER
 from api.app import app, api
 from api.resources.task import Task as Task
 from api.resources.admin.task import Task as AdminTask

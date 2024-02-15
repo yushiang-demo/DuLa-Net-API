@@ -2,4 +2,4 @@
 *.pkl
 .vscode/
 db
-assets
+storage/**/

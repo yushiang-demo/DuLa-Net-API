@@ -1,7 +1,7 @@
 import os
 import uuid
 from worker_helper import inference_from_file
-from api.constant import STATIC_FOLDER, TASK_STATUS
+from api.constant import TASK_STATUS
 
 from api.app import api, db
 
@@ -66,8 +66,7 @@ class Task(Resource):
                 'status': TASK_STATUS.PROCESSING,
             })
             if isReady:                
-                output = os.path.join(STATIC_FOLDER, id)
-                inference_from_file(file, output, id)
+                inference_from_file(file, id)
                 output = {
                     '_id': id
                 }
@@ -83,10 +82,8 @@ class Task(Resource):
         args = postReq.parser.parse_args()
         file = args.file
         if file:
-            id = db.createTask(f"{request.referrer}files/storage")
-            output = os.path.join(STATIC_FOLDER, id)
-            os.makedirs(output)
-            inference_from_file(file, output, id)
+            id = db.createTask()
+            inference_from_file(file, id)
 
             output = {
                 '_id': id

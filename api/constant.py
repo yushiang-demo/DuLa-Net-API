@@ -1,5 +1,3 @@
-STATIC_FOLDER = 'assets/storage'
-
 class TASK_STATUS():
     PROCESSING = 'PROCESSING'
     REMOVED = 'REMOVED'

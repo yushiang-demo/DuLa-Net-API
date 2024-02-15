@@ -19,19 +19,11 @@ class DB():
         except:
             return None
 
-    def createTask(self, path):
+    def createTask(self):
         object_id = ObjectId()
         self.task_collection.insert_one({
             '_id': object_id,
             'status': TASK_STATUS.PROCESSING,
-            'images': {
-                'origin': f'{path}/{object_id}/raw.jpg',
-                'preview': f'{path}/{object_id}/vis.jpg',
-                'aligned': f'{path}/{object_id}/image.jpg',
-            },
-            'layout':{
-                'data': None
-            }
         })
         return str(object_id)
         

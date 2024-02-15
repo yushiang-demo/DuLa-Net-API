@@ -19,9 +19,9 @@ Layout = api.model('Layout',{
 })
 
 Images = api.model('Images',{
-    'preview': fields.String,
-    'origin': fields.String,
+    'input': fields.String,
     'aligned': fields.String,
+    'layout': fields.String,
 })
 
 Task = api.model('Task', {
