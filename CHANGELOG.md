@@ -13,11 +13,11 @@ The format is based on [Keep a Changelog](https://github.com/olivierlacan/keep-a
 
 ### Removed
 
-## [Unreleased] - 2024-02-14
+## [v1.0.0] - 2024-02-14
 
 ### Added
 
-- Migrate flask api endpoints. ()
+- Init flask api server. (https://github.com/yushiang-demo/dula-net-webapp/pull/1)
 
 ### Changed
 
