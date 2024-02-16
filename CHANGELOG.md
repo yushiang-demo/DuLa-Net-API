@@ -13,6 +13,8 @@ The format is based on [Keep a Changelog](https://github.com/olivierlacan/keep-a
 
 ### Fixed
 
+- Task response missing 2d coords. (https://github.com/yushiang-demo/dula-net-webapp/pull/3)
+
 ### Removed
 
 ## [1.0.0] - 2024-02-14
