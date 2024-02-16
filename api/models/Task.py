@@ -3,7 +3,7 @@ from api.app import api
 
 layoutPoint = api.model('LayoutPoint',{
     'id': fields.Integer,
-    'coord': fields.List(fields.Float),
+    'coords': fields.List(fields.Float),
     'xyz': fields.List(fields.Float),
 })
 
