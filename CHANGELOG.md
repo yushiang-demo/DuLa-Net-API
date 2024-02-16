@@ -13,7 +13,7 @@ The format is based on [Keep a Changelog](https://github.com/olivierlacan/keep-a
 
 ### Removed
 
-## [v1.0.0] - 2024-02-14
+## [1.0.0] - 2024-02-14
 
 ### Added
 
