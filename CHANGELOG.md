@@ -25,5 +25,5 @@ The format is based on [Keep a Changelog](https://github.com/olivierlacan/keep-a
 
 ### Removed
 
-[unreleased]: https://github.com/yushiang-demo/dula-net-webapp/compare/v1.0.0...HEAD
-[1.0.0]: https://github.com/yushiang-demo/dula-net-webapp/releases/tag/v1.0.0
+[unreleased]: https://github.com/yushiang-demo/dula-net-webapp/compare/1.0.0...HEAD
+[1.0.0]: https://github.com/yushiang-demo/dula-net-webapp/releases/tag/1.0.0
