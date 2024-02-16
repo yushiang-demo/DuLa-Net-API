@@ -7,6 +7,8 @@ The format is based on [Keep a Changelog](https://github.com/olivierlacan/keep-a
 
 ### Added
 
+- Nginx add CORS header. (https://github.com/yushiang-demo/dula-net-webapp/pull/2)
+
 ### Changed
 
 ### Fixed
