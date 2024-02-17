@@ -1,5 +1,7 @@
 import os
+import io
 import uuid
+from PIL import Image
 from worker_helper import inference_from_file
 from api.constant import TASK_STATUS
 
@@ -8,6 +10,7 @@ from api.app import api, db
 from flask import request, jsonify
 from flask_restx import Resource, abort
 from api.models import Request, Task
+from helpers.storage import save_input
 
 postReq = Request()
 postReq.addFile(name='file',required=True)
@@ -66,11 +69,16 @@ class Task(Resource):
                 'status': TASK_STATUS.PROCESSING,
             })
             if isReady:                
-                inference_from_file(file, id)
-                output = {
-                    '_id': id
-                }
-                return output, 200
+                pil_image = Image.open(io.BytesIO(file.read()))
+                image_path = save_input(pil_image, id)
+                db.updateTask(id, {
+                    'input': image_path,
+                    'output': None
+                })
+                
+                inference_from_file(pil_image, id)
+
+                return db.getTask(id), 200
             else:
                 return abort(400, message=f'Task {id} is not ready.')
         else:
@@ -83,11 +91,15 @@ class Task(Resource):
         file = args.file
         if file:
             id = db.createTask()
-            inference_from_file(file, id)
+            
+            pil_image = Image.open(io.BytesIO(file.read()))
+            image_path = save_input(pil_image, id)
+            db.updateTask(id, {
+                'input': image_path,
+            })
 
-            output = {
-                '_id': id
-            }
-            return output, 200
+            inference_from_file(pil_image, id)
+
+            return db.getTask(id), 200
         else:
             return {}, 400
