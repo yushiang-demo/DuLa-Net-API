@@ -11,6 +11,8 @@ The format is based on [Keep a Changelog](https://github.com/olivierlacan/keep-a
 
 ### Changed
 
+- DB schema and storage helper. (https://github.com/yushiang-demo/dula-net-webapp/pull/4)
+
 ### Fixed
 
 - Task response missing 2d coords. (https://github.com/yushiang-demo/dula-net-webapp/pull/3)
