@@ -7,6 +7,16 @@ The format is based on [Keep a Changelog](https://github.com/olivierlacan/keep-a
 
 ### Added
 
+### Changed
+
+### Fixed
+
+### Removed
+
+## [1.0.1] - 2024-02-17
+
+### Added
+
 - Nginx add CORS header. (https://github.com/yushiang-demo/dula-net-webapp/pull/2)
 
 ### Changed
@@ -31,5 +41,6 @@ The format is based on [Keep a Changelog](https://github.com/olivierlacan/keep-a
 
 ### Removed
 
-[unreleased]: https://github.com/yushiang-demo/dula-net-webapp/compare/1.0.0...HEAD
+[unreleased]: https://github.com/yushiang-demo/dula-net-webapp/compare/1.0.1...HEAD
+[1.0.1]: https://github.com/yushiang-demo/dula-net-webapp/releases/tag/1.0.1
 [1.0.0]: https://github.com/yushiang-demo/dula-net-webapp/releases/tag/1.0.0
