@@ -3,7 +3,7 @@ from api.app import api
 
 layoutPoint = api.model('LayoutPoint',{
     'id': fields.Integer,
-    'coord': fields.List(fields.Float),
+    'coords': fields.List(fields.Float),
     'xyz': fields.List(fields.Float),
 })
 
@@ -19,14 +19,18 @@ Layout = api.model('Layout',{
 })
 
 Images = api.model('Images',{
-    'input': fields.String,
     'aligned': fields.String,
     'layout': fields.String,
+})
+
+Output = api.model('Output',{   
+    'images': fields.Nested(Images),
+    'layout': fields.Nested(Layout),
 })
 
 Task = api.model('Task', {
     'uuid':  fields.String(attribute='_id'),
     'status': fields.String,
-    'images': fields.Nested(Images),
-    'layout': fields.Nested(Layout),
+    'input': fields.String,
+    'output': fields.Nested(Output),
 })

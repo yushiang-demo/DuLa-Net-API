@@ -9,9 +9,8 @@ from mongodb.app import db
 import base64
 from PIL import Image
 from io import BytesIO
+from helpers.storage import save_input, save_aligned, save_layout
 
-STORAGE_FOLDER = os.environ.get('STORAGE_FOLDER')
-STORAGE_BASE_URL = os.environ.get('STORAGE_BASE_URL')
 def base64_to_pil(base64_str):
     image_data = base64.b64decode(base64_str)
     img_buffer = BytesIO(image_data)
@@ -24,26 +23,22 @@ class Task(Resource):
         callback endpoints for worker.
         '''
         data = request.json
-        input_img = base64_to_pil(data['images']['input'])
         aligned_img = base64_to_pil(data['images']['aligned'])
         layout_img = base64_to_pil(data['images']['layout'])
         layout = data['layout']
         id = data['id']
-        
-        output = os.path.join(STORAGE_FOLDER,id)
-        os.makedirs(output, exist_ok=True)
-
-        input_img.save(os.path.join(output,"input.jpg"))
-        aligned_img.save(os.path.join(output,"aligned.jpg"))
-        layout_img.save(os.path.join(output,"layout.jpg"))
+        aligned_path = save_aligned(aligned_img, id)
+        layout_path = save_layout(layout_img, id)
 
         db.updateTask(id, {
-            'images': {
-                'input': f'{STORAGE_BASE_URL}/{id}/input.jpg',
-                'aligned': f'{STORAGE_BASE_URL}/{id}/aligned.jpg',
-                'layout': f'{STORAGE_BASE_URL}/{id}/layout.jpg',
-            },
-            'layout': layout
+            'output':{
+                'images': {
+                    'aligned': aligned_path,
+                    'layout': layout_path,
+                },
+                'layout': layout
+            }
+            
         })
         if db.getTask(id):
             db.updateTask(id, {
