@@ -7,6 +7,16 @@ The format is based on [Keep a Changelog](https://github.com/olivierlacan/keep-a
 
 ### Added
 
+### Changed
+
+### Fixed
+
+### Removed
+
+## [1.1.0] - 2024-02-18
+
+### Added
+
 - Nginx and docker image for webapp. (https://github.com/yushiang-demo/dula-net-webapp/pull/6)
 
 ### Changed
@@ -45,6 +55,7 @@ The format is based on [Keep a Changelog](https://github.com/olivierlacan/keep-a
 
 ### Removed
 
-[unreleased]: https://github.com/yushiang-demo/dula-net-webapp/compare/1.0.1...HEAD
-[1.0.1]: https://github.com/yushiang-demo/dula-net-webapp/releases/tag/1.0.1
+[unreleased]: https://github.com/yushiang-demo/dula-net-webapp/compare/1.1.0...HEAD
+[1.1.0]: https://github.com/yushiang-demo/dula-net-webapp/compare/1.0.1...1.1.0
+[1.0.1]: https://github.com/yushiang-demo/dula-net-webapp/compare/1.0.0...1.0.1
 [1.0.0]: https://github.com/yushiang-demo/dula-net-webapp/releases/tag/1.0.0
