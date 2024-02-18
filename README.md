@@ -3,8 +3,9 @@
 ## Quick Start
 
 1. Start services: `docker-compose up -d`
-2. Explore API details on Swagger UI at [http://localhost](http://localhost).
-3. Inspect MongoDB at [http://localhost/mongoadmin](http://localhost/mongoadmin). (Password is in the `docker-compose.yml` file.)
+2. Explore Web app at [http://localhost](http://localhost) and click user icon.
+3. Explore API details on Swagger UI at [http://localhost/doc](http://localhost/doc).
+4. Inspect MongoDB at [http://localhost/mongoadmin](http://localhost/mongoadmin). (Password is in the `docker-compose.yml` file.)
 
 ### Useful Commands:
 
@@ -16,12 +17,13 @@
 
 ## Docker Volumes
 
-- Find result data in the `assets/storage` directory.
+- Find result data in the `storage/${id}` directory.
 - Database data is stored in the `db` directory.
 
 
 ## API Endpoints
 
+- **POST /api/admin/task**: Callback for dula-net worker.
 - **GET /api/admin/tasks**: Retrieve all tasks.
 - **GET /api/task**: Retrieve a specific task.
 - **DELETE /api/task**: Mark a task as deleted.
