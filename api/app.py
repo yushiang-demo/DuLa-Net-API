@@ -4,7 +4,7 @@ from mongodb.app import db
 
 app = Flask(__name__)
 app.config['RESTX_MASK_SWAGGER'] = False
-api = Api(app, version='1.0', title='DuLa-Net APIs', prefix='/api', base_url='/api')
+api = Api(app, version='1.0', title='DuLa-Net APIs', prefix='/api', base_url='/api', doc='/doc/')
 
 import traceback
 # Global error handler for all other exceptions

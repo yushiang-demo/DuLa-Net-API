@@ -64,3 +64,6 @@ services:
       ME_CONFIG_SITE_BASEURL: /mongoadmin
     depends_on:
       - mongo
+    
+  client:
+    image: ghcr.io/yushiang-demo/pano-to-mesh:latest
